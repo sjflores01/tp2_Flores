@@ -1,0 +1,13 @@
+D:\Santi\Personal\Programacion\2020\Programacion 3\TP2\tp2_Flores\Ventanas\bin\Debug\Ventanas.exe.config
+D:\Santi\Personal\Programacion\2020\Programacion 3\TP2\tp2_Flores\Ventanas\bin\Debug\Ventanas.exe
+D:\Santi\Personal\Programacion\2020\Programacion 3\TP2\tp2_Flores\Ventanas\bin\Debug\Ventanas.pdb
+D:\Santi\Personal\Programacion\2020\Programacion 3\TP2\tp2_Flores\Ventanas\bin\Debug\ModeloDominio.dll
+D:\Santi\Personal\Programacion\2020\Programacion 3\TP2\tp2_Flores\Ventanas\bin\Debug\ModeloDominio.pdb
+D:\Santi\Personal\Programacion\2020\Programacion 3\TP2\tp2_Flores\Ventanas\obj\Debug\Ventanas.csprojAssemblyReference.cache
+D:\Santi\Personal\Programacion\2020\Programacion 3\TP2\tp2_Flores\Ventanas\obj\Debug\Ventanas.VentanaInicio.resources
+D:\Santi\Personal\Programacion\2020\Programacion 3\TP2\tp2_Flores\Ventanas\obj\Debug\Ventanas.Properties.Resources.resources
+D:\Santi\Personal\Programacion\2020\Programacion 3\TP2\tp2_Flores\Ventanas\obj\Debug\Ventanas.csproj.GenerateResource.cache
+D:\Santi\Personal\Programacion\2020\Programacion 3\TP2\tp2_Flores\Ventanas\obj\Debug\Ventanas.csproj.CopyComplete
+D:\Santi\Personal\Programacion\2020\Programacion 3\TP2\tp2_Flores\Ventanas\obj\Debug\Ventanas.exe
+D:\Santi\Personal\Programacion\2020\Programacion 3\TP2\tp2_Flores\Ventanas\obj\Debug\Ventanas.pdb
+D:\Santi\Personal\Programacion\2020\Programacion 3\TP2\tp2_Flores\Ventanas\obj\Debug\Ventanas.VentanaABM_Categoria.resources
