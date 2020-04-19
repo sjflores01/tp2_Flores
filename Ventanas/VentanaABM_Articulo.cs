@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ModeloDominio;
+using Negocio;
 
 namespace Ventanas
 {
@@ -15,6 +17,21 @@ namespace Ventanas
         public VentanaABM_Articulo()
         {
             InitializeComponent();
+        }
+
+        private void VentanaABM_Articulo_Load(object sender, EventArgs e)
+        {
+            MarcaNegocio marca = new MarcaNegocio();
+            CategoriaNegocio categoria = new CategoriaNegocio();
+            try
+            {
+                cbMarca.DataSource = marca.ListarMarcas();
+                cbCategoria.DataSource = categoria.ListarCartegorias();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

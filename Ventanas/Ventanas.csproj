@@ -107,6 +107,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Controlador\Negocio.csproj">
+      <Project>{8b48972d-05f1-4ed6-ac18-f3264ce76a8c}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ModeloDominio\ModeloDominio.csproj">
       <Project>{dfa5e754-8a1a-4333-9a8a-94b9c5000978}</Project>
       <Name>ModeloDominio</Name>

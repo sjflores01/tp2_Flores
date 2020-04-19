@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModeloDominio", "ModeloDomi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ventanas", "Ventanas\Ventanas.csproj", "{73511CC5-B16E-41C3-800D-AA56FF0F161B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controlador", "Controlador\Controlador.csproj", "{8B48972D-05F1-4ED6-AC18-F3264CE76A8C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Controlador\Negocio.csproj", "{8B48972D-05F1-4ED6-AC18-F3264CE76A8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
