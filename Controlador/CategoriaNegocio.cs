@@ -22,7 +22,8 @@ namespace Negocio
             {
                 conexion.ConnectionString = "data source = DESKTOP-1CME8C0\\SQLEXPRESS; initial catalog = CATALOGO_DB; integrated security = sspi";
                 comando.Connection = conexion;
-                comando.CommandText = "SELECT Eliminado, Descripcion from Categorias";
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "SELECT Eliminado, Id, Descripcion from Categorias";
                 conexion.Open();
 
                 lector = comando.ExecuteReader();
@@ -33,6 +34,7 @@ namespace Negocio
                     categoria.Eliminado = lector.GetBoolean(0);
                     if (!categoria.Eliminado)
                     {
+                        categoria.Id = lector.GetInt32(1);
                         categoria.Descripcion = lector["Descripcion"].ToString();
                         lista.Add(categoria);
                     }

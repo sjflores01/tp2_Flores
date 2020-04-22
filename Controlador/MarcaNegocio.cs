@@ -23,7 +23,8 @@ namespace Negocio
 
 				conexion.ConnectionString = "data source=DESKTOP-1CME8C0\\SQLEXPRESS; initial catalog= CATALOGO_DB; integrated security= sspi ";
 				comando.Connection = conexion;
-				comando.CommandText = "SELECT Eliminado, Descripcion from Marcas";
+				comando.CommandType = System.Data.CommandType.Text;
+				comando.CommandText = "SELECT Eliminado, Id, Descripcion from Marcas";
 				conexion.Open();
 
 				lector = comando.ExecuteReader();
@@ -34,6 +35,7 @@ namespace Negocio
 					marca.Eliminado = lector.GetBoolean(0);
 					if (!marca.Eliminado)
 					{
+						marca.Id = lector.GetInt32(1);
 						marca.Descripcion = lector["Descripcion"].ToString();
 					}
 					lista.Add(marca);
@@ -51,6 +53,61 @@ namespace Negocio
 			}
         }
 
+		public List<Marca> Listar()
+		{
+			AccesoADatos datos = new AccesoADatos();
+			List<Marca> lista = new List<Marca>();
+			Marca marca;
+			try
+			{
+				datos.SetearQuery("SELECT Eliminado, Id, Descripcion FROM Marcas");
+				datos.EjecutarLector();
 
+				while (datos.lector.Read())
+				{
+					marca = new Marca();
+					marca.Eliminado = datos.lector.GetBoolean(0);
+					if (!marca.Eliminado)
+					{
+						marca.Id = datos.lector.GetInt32(1);
+						marca.Descripcion = datos.lector["Descripcion"].ToString();
+					}
+					lista.Add(marca);
+				}
+
+				return lista;
+			}
+			catch (Exception ex)
+			{
+
+				throw ex;
+			}
+			finally
+			{
+				datos.CerrarConexion();
+			}
+		}
+
+		public void Alta(Marca marca)
+		{
+			AccesoADatos datos = new AccesoADatos();
+
+			try
+			{
+				datos.SetearQuery("INSERT INTO Marcas VALUES (@Descripcion, @Eliminado)");
+				datos.agregarParametros("@Descripcion", marca.Descripcion);
+				datos.agregarParametros("@Eliminado", marca.Eliminado);
+				datos.EjecutarAccion();
+			}
+			catch (Exception ex)
+			{
+
+				throw ex;
+			}
+			finally
+			{
+				datos.CerrarConexion();
+			}
+		}
     }
 }

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MostrarArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MostrarArticulo.Designer.cs">
+      <DependentUpon>MostrarArticulo.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaABM_Categoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     <Compile Include="VentanaABM_Articulo.Designer.cs">
       <DependentUpon>VentanaABM_Articulo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="MostrarArticulo.resx">
+      <DependentUpon>MostrarArticulo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanaABM_Articulo.resx">
       <DependentUpon>VentanaABM_Articulo.cs</DependentUpon>
     </EmbeddedResource>

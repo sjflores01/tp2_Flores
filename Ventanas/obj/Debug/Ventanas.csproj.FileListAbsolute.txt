@@ -15,3 +15,4 @@ D:\Santi\Personal\Programacion\2020\Programacion 3\TP2\tp2_Flores\Ventanas\obj\D
 D:\Santi\Personal\Programacion\2020\Programacion 3\TP2\tp2_Flores\Ventanas\obj\Debug\Ventanas.VentanaABM_Marca.resources
 D:\Santi\Personal\Programacion\2020\Programacion 3\TP2\tp2_Flores\Ventanas\bin\Debug\Controlador.dll
 D:\Santi\Personal\Programacion\2020\Programacion 3\TP2\tp2_Flores\Ventanas\bin\Debug\Controlador.pdb
+D:\Santi\Personal\Programacion\2020\Programacion 3\TP2\tp2_Flores\Ventanas\obj\Debug\Ventanas.MostrarArticulo.resources

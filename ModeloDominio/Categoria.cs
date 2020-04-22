@@ -10,6 +10,14 @@ namespace ModeloDominio
         public string Descripcion { get; set; }
         public bool Eliminado { get; set; }
 
+        public Categoria() { }
+
+        public Categoria (int Id, string Descripcion)
+        {
+            this.Id = Id;
+            this.Descripcion = Descripcion;
+        }
+
         public override string ToString()
         {
             return Descripcion;

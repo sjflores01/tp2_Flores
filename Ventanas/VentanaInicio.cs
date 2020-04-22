@@ -14,6 +14,8 @@ namespace Ventanas
 {
     public partial class VentanaInicio : Form
     {
+        List<Articulo> lista;
+
         public VentanaInicio()
         {
             InitializeComponent();
@@ -21,10 +23,16 @@ namespace Ventanas
 
         private void VentanaInicio_Load(object sender, EventArgs e)
         {
+            cargarDatos();
+        }
+
+        private void cargarDatos()
+        {
             ArticuloNegocio articulo = new ArticuloNegocio();
             try
             {
-                dgvListadoArticulos.DataSource = articulo.ListarArticulos();
+                lista = articulo.Listar();
+                dgvListadoArticulos.DataSource = lista;
                 dgvListadoArticulos.Columns[0].Visible = false;
                 dgvListadoArticulos.Columns[3].Visible = false;
                 dgvListadoArticulos.Columns[5].Visible = false;
@@ -54,10 +62,96 @@ namespace Ventanas
             }
         }
 
+
+
         private void articuloToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VentanaABM_Articulo nuevoArticulo = new VentanaABM_Articulo();
             nuevoArticulo.ShowDialog();
+            cargarDatos();
         }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Articulo modificar;
+
+            modificar = (Articulo)dgvListadoArticulos.CurrentRow.DataBoundItem;
+            VentanaABM_Articulo VentanaModificar = new VentanaABM_Articulo(modificar);
+            VentanaModificar.ShowDialog();
+            cargarDatos();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int Id;
+            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+            try
+            {
+            Id = ((Articulo)dgvListadoArticulos.CurrentRow.DataBoundItem).Id;
+            DialogResult resultado;
+            resultado = MessageBox.Show("Esta seguro que desea dar de baja el articulo?", "Eliminar Articulo", MessageBoxButtons.YesNo);
+            if (resultado == DialogResult.Yes)
+            {
+                articuloNegocio.Baja(Id);
+                MessageBox.Show("Baja realizada con exito.");
+            }
+            cargarDatos();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txtBBuscar_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                List<Articulo> listaFiltrada;
+
+                if (txtBBuscar.Text == "")
+                {
+                    listaFiltrada = lista;
+                }
+                else
+                {
+                    listaFiltrada = lista.FindAll(l => l.Nombre.ToLower().Contains(txtBBuscar.Text.ToLower()));
+                }
+                    dgvListadoArticulos.DataSource = listaFiltrada;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dgvListadoArticulos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Articulo articulo;
+            articulo = (Articulo)dgvListadoArticulos.CurrentRow.DataBoundItem;
+            MostrarArticulo mostrar = new MostrarArticulo(articulo);
+            mostrar.ShowDialog();
+        }
+
+        private void marcaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VentanaABM_Marca nuevaMarca = new VentanaABM_Marca();
+            nuevaMarca.ShowDialog();
+        }
+
+        private void categoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

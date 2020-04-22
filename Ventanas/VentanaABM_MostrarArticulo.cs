@@ -34,7 +34,7 @@ namespace Ventanas
 
             try
             {
-                cbMarca.DataSource = marca.Listar();
+                cbMarca.DataSource = marca.ListarMarcas();
                 cbMarca.ValueMember = "Id";
                 cbMarca.DisplayMember = "Descripcion";
                 cbMarca.SelectedIndex = -1;
@@ -43,6 +43,7 @@ namespace Ventanas
                 cbCategoria.ValueMember = "Id";
                 cbCategoria.DisplayMember = "Descripcion";
                 cbCategoria.SelectedIndex = -1;
+
                 if(articulo != null)
                 {
                     Text = "Modificar Articulo";
@@ -51,7 +52,7 @@ namespace Ventanas
                     txtBNombre.Text = articulo.Nombre;
                     txtBDescripcion.Text = articulo.Descripcion;
                     txtBImagen.Text = articulo.Imagen;
-                    txtBPrecio.Text = articulo.Precio.ToString(string.Format("F2"));
+                    txtBPrecio.Text = articulo.Precio.ToString();
                     cbMarca.SelectedValue = articulo.Marca.Id;
                     cbCategoria.SelectedValue = articulo.Categoria.Id;
                 }
