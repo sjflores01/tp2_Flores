@@ -1,6 +1,6 @@
 ﻿namespace Ventanas
 {
-    partial class VentanaABM_Marca
+    partial class VentanaABM_MarcaCategoria
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaABM_MarcaCategoria));
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -42,7 +43,7 @@
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(94, 37);
             this.btnAceptar.TabIndex = 0;
-            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.Text = "&Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
@@ -52,8 +53,9 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(94, 37);
             this.btnCancelar.TabIndex = 1;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lblNombre
             // 
@@ -75,24 +77,29 @@
             // 
             this.grBNuevaMarca.Controls.Add(this.txtBNombre);
             this.grBNuevaMarca.Controls.Add(this.lblNombre);
-            this.grBNuevaMarca.Location = new System.Drawing.Point(12, 41);
+            this.grBNuevaMarca.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.grBNuevaMarca.Location = new System.Drawing.Point(25, 36);
             this.grBNuevaMarca.Name = "grBNuevaMarca";
             this.grBNuevaMarca.Size = new System.Drawing.Size(318, 69);
             this.grBNuevaMarca.TabIndex = 4;
             this.grBNuevaMarca.TabStop = false;
             this.grBNuevaMarca.Text = "Nueva Marca";
             // 
-            // VentanaABM_Marca
+            // VentanaABM_MarcaCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SlateGray;
             this.ClientSize = new System.Drawing.Size(367, 193);
             this.Controls.Add(this.grBNuevaMarca);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(383, 232);
             this.MinimizeBox = false;
-            this.Name = "VentanaABM_Marca";
+            this.MinimumSize = new System.Drawing.Size(383, 232);
+            this.Name = "VentanaABM_MarcaCategoria";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Marca";

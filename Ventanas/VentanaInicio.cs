@@ -16,15 +16,16 @@ namespace Ventanas
     {
         List<Articulo> lista;
 
+        #region Constructor
+
         public VentanaInicio()
         {
             InitializeComponent();
         }
 
-        private void VentanaInicio_Load(object sender, EventArgs e)
-        {
-            cargarDatos();
-        }
+        #endregion
+
+        #region Metodos
 
         private void cargarDatos()
         {
@@ -33,6 +34,7 @@ namespace Ventanas
             {
                 lista = articulo.Listar();
                 dgvListadoArticulos.DataSource = lista;
+                dgvListadoArticulos.Columns[1].Width = 15;
                 dgvListadoArticulos.Columns[0].Visible = false;
                 dgvListadoArticulos.Columns[3].Visible = false;
                 dgvListadoArticulos.Columns[5].Visible = false;
@@ -44,6 +46,15 @@ namespace Ventanas
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        #endregion
+
+        #region Controles Eventos
+
+        private void VentanaInicio_Load(object sender, EventArgs e)
+        {
+            cargarDatos();
         }
 
         private void dgvListadoArticulos_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -61,8 +72,6 @@ namespace Ventanas
                 MessageBox.Show(ex.Message);
             }
         }
-
-
 
         private void articuloToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -143,15 +152,73 @@ namespace Ventanas
 
         private void marcaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VentanaABM_Marca nuevaMarca = new VentanaABM_Marca();
+            Marca marca = new Marca();
+            VentanaABM_MarcaCategoria nuevaMarca = new VentanaABM_MarcaCategoria(marca);
             nuevaMarca.ShowDialog();
         }
 
         private void categoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Categoria categoria = new Categoria();
+            VentanaABM_MarcaCategoria nuevaCategoria = new VentanaABM_MarcaCategoria(categoria);
+            nuevaCategoria.ShowDialog();
         }
 
-        
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            VentanaABM_Articulo nuevoArticulo = new VentanaABM_Articulo();
+            nuevoArticulo.ShowDialog();
+            cargarDatos();
+        }
+
+        #endregion
+
+        private void tsmiMarca_CheckStateChanged(object sender, EventArgs e)
+        {
+            if(tsmiMarca.Checked == true)
+            {
+                dgvListadoArticulos.Columns[4].Visible = true;
+            }
+            else
+            {
+                dgvListadoArticulos.Columns[4].Visible = false;
+            }
+        }
+
+        private void tsmiCategoria_CheckStateChanged(object sender, EventArgs e)
+        {
+            if(tsmiCategoria.Checked == true)
+            {
+                dgvListadoArticulos.Columns[5].Visible = true;                
+            }
+            else
+            {
+                dgvListadoArticulos.Columns[5].Visible = false;
+            }
+        }
+
+        private void tsmiDescripcion_CheckStateChanged(object sender, EventArgs e)
+        {
+            if(tsmiDescripcion.Checked == true)
+            {
+                dgvListadoArticulos.Columns[3].Visible = true;
+            }
+            else
+            {
+                dgvListadoArticulos.Columns[3].Visible = false;
+            }
+        }
+
+        private void tsmiPrecio_CheckStateChanged(object sender, EventArgs e)
+        {
+            if(tsmiPrecio.Checked == true)
+            {
+                dgvListadoArticulos.Columns[7].Visible = true;
+            }
+            else
+            {
+                dgvListadoArticulos.Columns[7].Visible = false;
+            }
+        }
     }
 }

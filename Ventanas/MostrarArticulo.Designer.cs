@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MostrarArticulo));
             this.btnAtras = new System.Windows.Forms.Button();
             this.grBoxNuevoArticulo = new System.Windows.Forms.GroupBox();
+            this.txtBCategoria = new System.Windows.Forms.TextBox();
+            this.txtBMarca = new System.Windows.Forms.TextBox();
             this.txtBPrecio = new System.Windows.Forms.TextBox();
             this.txtBDescripcion = new System.Windows.Forms.TextBox();
             this.txtBNombre = new System.Windows.Forms.TextBox();
@@ -41,8 +44,6 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.picBoxArticulo = new System.Windows.Forms.PictureBox();
-            this.txtBMarca = new System.Windows.Forms.TextBox();
-            this.txtBCategoria = new System.Windows.Forms.TextBox();
             this.grBoxNuevoArticulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxArticulo)).BeginInit();
             this.SuspendLayout();
@@ -72,12 +73,31 @@
             this.grBoxNuevoArticulo.Controls.Add(this.lblDescripcion);
             this.grBoxNuevoArticulo.Controls.Add(this.lblNombre);
             this.grBoxNuevoArticulo.Controls.Add(this.lblCodigo);
+            this.grBoxNuevoArticulo.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.grBoxNuevoArticulo.Location = new System.Drawing.Point(12, 12);
             this.grBoxNuevoArticulo.Name = "grBoxNuevoArticulo";
-            this.grBoxNuevoArticulo.Size = new System.Drawing.Size(353, 422);
+            this.grBoxNuevoArticulo.Size = new System.Drawing.Size(353, 299);
             this.grBoxNuevoArticulo.TabIndex = 22;
             this.grBoxNuevoArticulo.TabStop = false;
             this.grBoxNuevoArticulo.Text = "Articulo";
+            // 
+            // txtBCategoria
+            // 
+            this.txtBCategoria.Enabled = false;
+            this.txtBCategoria.Location = new System.Drawing.Point(78, 232);
+            this.txtBCategoria.MaxLength = 150;
+            this.txtBCategoria.Name = "txtBCategoria";
+            this.txtBCategoria.Size = new System.Drawing.Size(253, 20);
+            this.txtBCategoria.TabIndex = 15;
+            // 
+            // txtBMarca
+            // 
+            this.txtBMarca.Enabled = false;
+            this.txtBMarca.Location = new System.Drawing.Point(78, 205);
+            this.txtBMarca.MaxLength = 150;
+            this.txtBMarca.Name = "txtBMarca";
+            this.txtBMarca.Size = new System.Drawing.Size(253, 20);
+            this.txtBMarca.TabIndex = 14;
             // 
             // txtBPrecio
             // 
@@ -179,34 +199,20 @@
             this.picBoxArticulo.TabIndex = 21;
             this.picBoxArticulo.TabStop = false;
             // 
-            // txtBMarca
-            // 
-            this.txtBMarca.Enabled = false;
-            this.txtBMarca.Location = new System.Drawing.Point(78, 205);
-            this.txtBMarca.MaxLength = 150;
-            this.txtBMarca.Name = "txtBMarca";
-            this.txtBMarca.Size = new System.Drawing.Size(253, 20);
-            this.txtBMarca.TabIndex = 14;
-            // 
-            // txtBCategoria
-            // 
-            this.txtBCategoria.Enabled = false;
-            this.txtBCategoria.Location = new System.Drawing.Point(78, 232);
-            this.txtBCategoria.MaxLength = 150;
-            this.txtBCategoria.Name = "txtBCategoria";
-            this.txtBCategoria.Size = new System.Drawing.Size(253, 20);
-            this.txtBCategoria.TabIndex = 15;
-            // 
             // MostrarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SlateGray;
             this.ClientSize = new System.Drawing.Size(781, 512);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.grBoxNuevoArticulo);
             this.Controls.Add(this.picBoxArticulo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(797, 551);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(797, 551);
             this.Name = "MostrarArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.MostrarArticulo_Load);

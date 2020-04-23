@@ -51,5 +51,64 @@ namespace Negocio
                 conexion.Close();
             }
         }
+
+        public List<Categoria> Listar()
+        {
+            AccesoADatos datos = new AccesoADatos();
+            List<Categoria> lista = new List<Categoria>();
+            Categoria categoria;
+
+            try
+            {
+                datos.SetearQuery("SELECT Eliminado, Id, Descripcion from Categorias");
+                datos.EjecutarLector();
+
+                while (datos.lector.Read())
+                {
+                    categoria = new Categoria();
+                    categoria.Eliminado = datos.lector.GetBoolean(0);
+                    if (!categoria.Eliminado)
+                    {
+                        categoria.Id = datos.lector.GetInt32(1);
+                        categoria.Descripcion = datos.lector["Descripcion"].ToString();
+                        lista.Add(categoria);
+                    }
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+
+        public void Alta(Categoria categoria)
+        {
+            AccesoADatos datos = new AccesoADatos();
+
+            try
+            {
+                datos.SetearQuery("INSERT INTO CATEGORIAS VALUES(@Descripcion, @Eliminado)");
+                datos.agregarParametros("@Descripcion", categoria.Descripcion);
+                datos.agregarParametros("@Eliminado", categoria.Eliminado);
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+
     }
 }

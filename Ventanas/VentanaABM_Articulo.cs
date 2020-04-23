@@ -16,6 +16,8 @@ namespace Ventanas
     {
         private Articulo articulo = null;
 
+        #region Constructores
+
         public VentanaABM_Articulo()
         {
             InitializeComponent();
@@ -26,6 +28,10 @@ namespace Ventanas
             InitializeComponent();
             this.articulo = articulo;
         }
+
+        #endregion
+
+        #region Controles Eventos
 
         private void VentanaABM_Articulo_Load(object sender, EventArgs e)
         {
@@ -39,7 +45,7 @@ namespace Ventanas
                 cbMarca.DisplayMember = "Descripcion";
                 cbMarca.SelectedIndex = -1;
 
-                cbCategoria.DataSource = categoria.ListarCartegorias();
+                cbCategoria.DataSource = categoria.Listar();
                 cbCategoria.ValueMember = "Id";
                 cbCategoria.DisplayMember = "Descripcion";
                 cbCategoria.SelectedIndex = -1;
@@ -125,7 +131,7 @@ namespace Ventanas
             catch (Exception ex)
             {
 
-                MessageBox.Show("El URL es invalido!");
+                MessageBox.Show(ex.Message + "El URL es invalido!");
             }
         }
 
@@ -158,5 +164,7 @@ namespace Ventanas
                 e.Handled = true;
             }
         }
+
+        #endregion
     }
 }

@@ -16,11 +16,17 @@ namespace Ventanas
     {
         public Articulo articulo;
 
+        #region Constructores
+
         public MostrarArticulo(Articulo articulo)
         {
             InitializeComponent();
             this.articulo = articulo;
         }
+
+        #endregion
+
+        #region Controles Eventos
 
         private void MostrarArticulo_Load(object sender, EventArgs e)
         {
@@ -49,5 +55,7 @@ namespace Ventanas
         {
             Dispose();
         }
+
+        #endregion
     }
 }

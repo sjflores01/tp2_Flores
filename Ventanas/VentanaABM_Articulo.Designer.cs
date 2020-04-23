@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaABM_Articulo));
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
@@ -165,7 +166,7 @@
             this.cbMarca.Location = new System.Drawing.Point(78, 105);
             this.cbMarca.Name = "cbMarca";
             this.cbMarca.Size = new System.Drawing.Size(146, 21);
-            this.cbMarca.TabIndex = 14;
+            this.cbMarca.TabIndex = 10;
             // 
             // cbCategoria
             // 
@@ -174,11 +175,11 @@
             this.cbCategoria.Location = new System.Drawing.Point(78, 132);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(146, 21);
-            this.cbCategoria.TabIndex = 15;
+            this.cbCategoria.TabIndex = 11;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(391, 128);
+            this.pictureBox1.Location = new System.Drawing.Point(402, 107);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(150, 165);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -201,6 +202,7 @@
             this.grBoxNuevoArticulo.Controls.Add(this.lblDescripcion);
             this.grBoxNuevoArticulo.Controls.Add(this.lblNombre);
             this.grBoxNuevoArticulo.Controls.Add(this.lblCodigo);
+            this.grBoxNuevoArticulo.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.grBoxNuevoArticulo.Location = new System.Drawing.Point(20, 50);
             this.grBoxNuevoArticulo.Name = "grBoxNuevoArticulo";
             this.grBoxNuevoArticulo.Size = new System.Drawing.Size(356, 222);
@@ -213,7 +215,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(154, 317);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(117, 40);
-            this.btnAceptar.TabIndex = 18;
+            this.btnAceptar.TabIndex = 14;
             this.btnAceptar.Text = "&Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -223,7 +225,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(295, 317);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(117, 40);
-            this.btnCancelar.TabIndex = 19;
+            this.btnCancelar.TabIndex = 15;
             this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -232,7 +234,8 @@
             // lblPrevImagen
             // 
             this.lblPrevImagen.AutoSize = true;
-            this.lblPrevImagen.Location = new System.Drawing.Point(389, 106);
+            this.lblPrevImagen.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblPrevImagen.Location = new System.Drawing.Point(400, 85);
             this.lblPrevImagen.Name = "lblPrevImagen";
             this.lblPrevImagen.Size = new System.Drawing.Size(65, 13);
             this.lblPrevImagen.TabIndex = 20;
@@ -242,14 +245,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SlateGray;
             this.ClientSize = new System.Drawing.Size(584, 411);
             this.Controls.Add(this.lblPrevImagen);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.grBoxNuevoArticulo);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(600, 450);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(600, 450);
             this.Name = "VentanaABM_Articulo";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
