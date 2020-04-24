@@ -34,12 +34,18 @@ namespace Ventanas
             {
                 lista = articulo.Listar();
                 dgvListadoArticulos.DataSource = lista;
-                dgvListadoArticulos.Columns[1].Width = 15;
                 dgvListadoArticulos.Columns[0].Visible = false;
-                dgvListadoArticulos.Columns[3].Visible = false;
-                dgvListadoArticulos.Columns[5].Visible = false;
+                dgvListadoArticulos.Columns[1].MinimumWidth = 50;
+                dgvListadoArticulos.Columns[2].MinimumWidth = 80;
+                dgvListadoArticulos.Columns[3].Visible = tsmiDescripcion.Checked;
+                dgvListadoArticulos.Columns[3].MinimumWidth = 100;
+                dgvListadoArticulos.Columns[4].Visible = tsmiMarca.Checked;
+                dgvListadoArticulos.Columns[4].MinimumWidth = 70;
+                dgvListadoArticulos.Columns[5].Visible = tsmiCategoria.Checked;
+                dgvListadoArticulos.Columns[5].MinimumWidth = 80;
                 dgvListadoArticulos.Columns[6].Visible = false;
-                dgvListadoArticulos.Columns[7].Visible = false;
+                dgvListadoArticulos.Columns[7].Visible = tsmiPrecio.Checked;
+                dgvListadoArticulos.Columns[7].MinimumWidth = 70;
                 dgvListadoArticulos.Columns[8].Visible = false;
             }
             catch (Exception ex)
@@ -171,8 +177,6 @@ namespace Ventanas
             cargarDatos();
         }
 
-        #endregion
-
         private void tsmiMarca_CheckStateChanged(object sender, EventArgs e)
         {
             if(tsmiMarca.Checked == true)
@@ -220,5 +224,8 @@ namespace Ventanas
                 dgvListadoArticulos.Columns[7].Visible = false;
             }
         }
+
+        #endregion
+
     }
 }

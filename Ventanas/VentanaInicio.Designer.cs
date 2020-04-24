@@ -85,7 +85,7 @@
             this.categoriaToolStripMenuItem});
             this.nuevoToolStripMenuItem.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             // 
             // articuloToolStripMenuItem
@@ -115,13 +115,13 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(106, 6);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -144,7 +144,7 @@
             this.tsmiMarca.CheckState = System.Windows.Forms.CheckState.Checked;
             this.tsmiMarca.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.tsmiMarca.Name = "tsmiMarca";
-            this.tsmiMarca.Size = new System.Drawing.Size(180, 22);
+            this.tsmiMarca.Size = new System.Drawing.Size(136, 22);
             this.tsmiMarca.Text = "Marca";
             this.tsmiMarca.CheckStateChanged += new System.EventHandler(this.tsmiMarca_CheckStateChanged);
             // 
@@ -153,7 +153,7 @@
             this.tsmiCategoria.CheckOnClick = true;
             this.tsmiCategoria.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.tsmiCategoria.Name = "tsmiCategoria";
-            this.tsmiCategoria.Size = new System.Drawing.Size(180, 22);
+            this.tsmiCategoria.Size = new System.Drawing.Size(136, 22);
             this.tsmiCategoria.Text = "Categoria";
             this.tsmiCategoria.CheckStateChanged += new System.EventHandler(this.tsmiCategoria_CheckStateChanged);
             // 
@@ -162,7 +162,7 @@
             this.tsmiDescripcion.CheckOnClick = true;
             this.tsmiDescripcion.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.tsmiDescripcion.Name = "tsmiDescripcion";
-            this.tsmiDescripcion.Size = new System.Drawing.Size(180, 22);
+            this.tsmiDescripcion.Size = new System.Drawing.Size(136, 22);
             this.tsmiDescripcion.Text = "Descripcion";
             this.tsmiDescripcion.CheckStateChanged += new System.EventHandler(this.tsmiDescripcion_CheckStateChanged);
             // 
@@ -171,7 +171,7 @@
             this.tsmiPrecio.CheckOnClick = true;
             this.tsmiPrecio.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.tsmiPrecio.Name = "tsmiPrecio";
-            this.tsmiPrecio.Size = new System.Drawing.Size(180, 22);
+            this.tsmiPrecio.Size = new System.Drawing.Size(136, 22);
             this.tsmiPrecio.Text = "Precio";
             this.tsmiPrecio.CheckStateChanged += new System.EventHandler(this.tsmiPrecio_CheckStateChanged);
             // 
@@ -179,7 +179,6 @@
             // 
             this.dgvListadoArticulos.AllowUserToAddRows = false;
             this.dgvListadoArticulos.AllowUserToDeleteRows = false;
-            this.dgvListadoArticulos.AllowUserToResizeColumns = false;
             this.dgvListadoArticulos.AllowUserToResizeRows = false;
             this.dgvListadoArticulos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 

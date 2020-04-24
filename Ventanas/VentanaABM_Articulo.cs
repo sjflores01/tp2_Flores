@@ -101,11 +101,15 @@ namespace Ventanas
                     MessageBox.Show("Modificacion realizada con exito");
                     Dispose();
                 }
-                else
+                else if(!articuloNegocio.BuscarCodigo(articulo.Codigo))
                 {
                     articuloNegocio.Alta(articulo);
                     MessageBox.Show("Articulo agregado");
                     Dispose();
+                }
+                else
+                {
+                    MessageBox.Show("El Codigo ya esta siendo utilizado, por favor modifique el campo.");
                 }
             }
             catch (Exception ex)

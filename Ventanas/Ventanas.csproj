@@ -52,12 +52,6 @@
     <Compile Include="MostrarArticulo.Designer.cs">
       <DependentUpon>MostrarArticulo.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaABM_Categoria.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VentanaABM_Categoria.Designer.cs">
-      <DependentUpon>VentanaABM_Categoria.cs</DependentUpon>
-    </Compile>
     <Compile Include="VentanaABM_MarcaCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,9 +77,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaABM_Articulo.resx">
       <DependentUpon>VentanaABM_Articulo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VentanaABM_Categoria.resx">
-      <DependentUpon>VentanaABM_Categoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaABM_MarcaCategoria.resx">
       <DependentUpon>VentanaABM_MarcaCategoria.cs</DependentUpon>

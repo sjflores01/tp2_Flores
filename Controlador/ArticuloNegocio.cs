@@ -189,5 +189,37 @@ namespace Negocio
             }
         }
 
+        public bool BuscarCodigo(string codigo)
+        {
+            bool encontrado = false;
+            AccesoADatos datos = new AccesoADatos();
+            string codArticulo;
+
+            try
+            {
+                datos.SetearQuery("SELECT Codigo FROM Articulos");
+                datos.EjecutarLector();
+
+                while (datos.lector.Read())
+                {
+                    codArticulo = datos.lector["Codigo"].ToString();
+                    if(codArticulo == codigo)
+                    {
+                        encontrado = true;
+                    }
+                }
+                return encontrado;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+
     }
 }
