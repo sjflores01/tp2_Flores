@@ -62,10 +62,16 @@ namespace Ventanas
                 {
                     categoria.Eliminado = false;
                     categoria.Descripcion = txtBNombre.Text;
+                    if (!categoriaNegocio.BuscarCategoria(categoria.Descripcion.ToLower()))
+                    {
                     categoriaNegocio.Alta(categoria);
-
                     MessageBox.Show("Categoria agregada exitosamente.");
                     Dispose();
+                    }else
+                    {
+                        MessageBox.Show("La categoria ya esta creada");
+                    }
+
                 }
                 catch (Exception ex)
                 {
@@ -80,10 +86,16 @@ namespace Ventanas
                 {
                     marca.Eliminado = false;
                     marca.Descripcion = txtBNombre.Text;
+                    if (!marcaNegocio.BuscarNombre(marca.Descripcion.ToLower()))
+                    {
                     marcaNegocio.Alta(marca);
-
                     MessageBox.Show("Marca agregada exitosamente.");
                     Dispose();
+                    }
+                    else
+                    {
+                        MessageBox.Show("La marca ya existe.");
+                    }
                 }
                 catch (Exception ex)
                 {

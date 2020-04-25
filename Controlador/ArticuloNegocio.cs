@@ -10,52 +10,7 @@ namespace Negocio
 {
     public class ArticuloNegocio
     {
-        public List<Articulo> ListarArticulos()
-        {
-            List<Articulo> listado = new List<Articulo>();
-            Articulo articulo;
-            SqlConnection conexion = new SqlConnection();
-            SqlCommand comando = new SqlCommand();
-            SqlDataReader lector;
-
-            try
-            {
-                conexion.ConnectionString = "data source=DESKTOP-1CME8C0\\SQLEXPRESS; initial catalog=CATALOGO_DB; integrated security=sspi";
-                comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "select a.Eliminado, a.Codigo, m.Descripcion as Marca, a.Nombre, a.ImagenUrl " +
-                                      "from Articulos as a, Marcas as m where a.IdMarca = m.Id";
-                comando.Connection = conexion;
-                conexion.Open();
-
-                lector = comando.ExecuteReader();
-                
-                while (lector.Read())
-                {
-                    articulo = new Articulo();
-                    articulo.Eliminado = lector.GetBoolean(0);
-                    if (!articulo.Eliminado)
-                    {
-                    articulo.Codigo = lector["Codigo"].ToString();
-                    articulo.Marca = new Marca();
-                    articulo.Marca.Descripcion = lector["Marca"].ToString();
-                    articulo.Nombre = lector["Nombre"].ToString();
-                    articulo.Imagen = lector["ImagenUrl"].ToString();
-
-                    listado.Add(articulo);
-                    }
-                }
-
-                return listado;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                conexion.Close();
-            }
-        }
+        #region Metodos
 
         public List<Articulo> Listar()
         {
@@ -110,25 +65,20 @@ namespace Negocio
 
         public void Alta(Articulo articulo)
         {
-            SqlConnection conexion = new SqlConnection();
-            SqlCommand comando = new SqlCommand();
+            AccesoADatos datos = new AccesoADatos();
 
             try
             {
-                conexion.ConnectionString = "data source=DESKTOP-1CME8C0\\SQLEXPRESS; initial catalog= CATALOGO_DB; integrated security= sspi";
-                comando.Connection = conexion;
-                comando.CommandText = "INSERT INTO ARTICULOS VALUES (@Codigo, @Nombre, @Descripcion, @Marca, @Categoria, @Imagen, @Precio, @Eliminado)";
-                comando.Parameters.Clear();
-                comando.Parameters.AddWithValue("@Codigo",articulo.Codigo);
-                comando.Parameters.AddWithValue("@Nombre", articulo.Nombre);
-                comando.Parameters.AddWithValue("@Descripcion", articulo.Descripcion);
-                comando.Parameters.AddWithValue("@Marca", articulo.Marca.Id);
-                comando.Parameters.AddWithValue("@Categoria", articulo.Categoria.Id);
-                comando.Parameters.AddWithValue("@Imagen", articulo.Imagen);
-                comando.Parameters.AddWithValue("@Precio", articulo.Precio);
-                comando.Parameters.AddWithValue("@Eliminado", articulo.Eliminado);
-                conexion.Open();
-                comando.ExecuteNonQuery();
+                datos.SetearQuery("INSERT INTO ARTICULOS VALUES (@Codigo, @Nombre, @Descripcion, @Marca, @Categoria, @Imagen, @Precio, @Eliminado)");
+                datos.agregarParametros("@Codigo",articulo.Codigo);
+                datos.agregarParametros("@Nombre", articulo.Nombre);
+                datos.agregarParametros("@Descripcion", articulo.Descripcion);
+                datos.agregarParametros("@Marca", articulo.Marca.Id);
+                datos.agregarParametros("@Categoria", articulo.Categoria.Id);
+                datos.agregarParametros("@Imagen", articulo.Imagen);
+                datos.agregarParametros("@Precio", articulo.Precio);
+                datos.agregarParametros("@Eliminado", articulo.Eliminado);
+                datos.EjecutarAccion();
 
             }
             catch (Exception ex)
@@ -137,7 +87,7 @@ namespace Negocio
             }
             finally
             {
-                conexion.Close();
+                datos.CerrarConexion();
             }
         }
 
@@ -191,35 +141,22 @@ namespace Negocio
 
         public bool BuscarCodigo(string codigo)
         {
-            bool encontrado = false;
-            AccesoADatos datos = new AccesoADatos();
-            string codArticulo;
+            bool result = false;
+            List<Articulo> lista;
+            lista = Listar();
 
-            try
+            foreach(Articulo articulo in lista)
             {
-                datos.SetearQuery("SELECT Codigo FROM Articulos");
-                datos.EjecutarLector();
-
-                while (datos.lector.Read())
+                if(codigo == articulo.Codigo)
                 {
-                    codArticulo = datos.lector["Codigo"].ToString();
-                    if(codArticulo == codigo)
-                    {
-                        encontrado = true;
-                    }
+                    result = true;
+                    return result;
                 }
-                return encontrado;
             }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-            finally
-            {
-                datos.CerrarConexion();
-            }
+            return result;
         }
+
+        #endregion
 
     }
 }

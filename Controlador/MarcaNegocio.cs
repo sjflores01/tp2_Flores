@@ -10,50 +10,9 @@ namespace Negocio
 {
     public class MarcaNegocio
     {
-        public List<Marca> ListarMarcas()
-        {
-			List<Marca> lista = new List<Marca>();
-			Marca marca;
-			SqlConnection conexion = new SqlConnection();
-			SqlCommand comando = new SqlCommand();
-			SqlDataReader lector;
+        #region Metodos
 
-			try
-			{
-
-				conexion.ConnectionString = "data source=DESKTOP-1CME8C0\\SQLEXPRESS; initial catalog= CATALOGO_DB; integrated security= sspi ";
-				comando.Connection = conexion;
-				comando.CommandType = System.Data.CommandType.Text;
-				comando.CommandText = "SELECT Eliminado, Id, Descripcion from Marcas";
-				conexion.Open();
-
-				lector = comando.ExecuteReader();
-
-				while (lector.Read())
-				{
-					marca = new Marca();
-					marca.Eliminado = lector.GetBoolean(0);
-					if (!marca.Eliminado)
-					{
-						marca.Id = lector.GetInt32(1);
-						marca.Descripcion = lector["Descripcion"].ToString();
-					}
-					lista.Add(marca);
-				}
-
-				return lista;
-			}
-			catch (Exception ex)
-			{
-				throw ex;
-			}
-			finally
-			{
-				conexion.Close();
-			}
-        }
-
-		public List<Marca> Listar()
+        public List<Marca> Listar()
 		{
 			AccesoADatos datos = new AccesoADatos();
 			List<Marca> lista = new List<Marca>();
@@ -109,5 +68,24 @@ namespace Negocio
 				datos.CerrarConexion();
 			}
 		}
+
+		public bool BuscarNombre(string nombre)
+		{
+			bool result = false;
+			List<Marca> lista;
+			lista = Listar();
+
+			foreach(Marca marca in lista)
+			{
+				if(nombre == marca.Descripcion.ToLower())
+				{
+					result = true;
+					return result;
+				}
+			}
+			return result;
+		}
+
+        #endregion
     }
 }

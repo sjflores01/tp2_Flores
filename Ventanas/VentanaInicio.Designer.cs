@@ -62,7 +62,7 @@
             this.verToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(760, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(808, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -195,7 +195,7 @@
             this.dgvListadoArticulos.Name = "dgvListadoArticulos";
             this.dgvListadoArticulos.ReadOnly = true;
             this.dgvListadoArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListadoArticulos.Size = new System.Drawing.Size(400, 315);
+            this.dgvListadoArticulos.Size = new System.Drawing.Size(448, 346);
             this.dgvListadoArticulos.TabIndex = 1;
             this.dgvListadoArticulos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListadoArticulos_CellDoubleClick);
             this.dgvListadoArticulos.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvListadoArticulos_CellMouseClick);
@@ -203,7 +203,7 @@
             // picBox
             // 
             this.picBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picBox.Location = new System.Drawing.Point(425, 59);
+            this.picBox.Location = new System.Drawing.Point(496, 59);
             this.picBox.Name = "picBox";
             this.picBox.Size = new System.Drawing.Size(300, 315);
             this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -213,7 +213,7 @@
             // btnModificar
             // 
             this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnModificar.Location = new System.Drawing.Point(178, 383);
+            this.btnModificar.Location = new System.Drawing.Point(178, 417);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(108, 39);
             this.btnModificar.TabIndex = 3;
@@ -224,7 +224,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEliminar.Location = new System.Drawing.Point(311, 383);
+            this.btnEliminar.Location = new System.Drawing.Point(311, 417);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(108, 39);
             this.btnEliminar.TabIndex = 4;
@@ -253,7 +253,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAgregar.Location = new System.Drawing.Point(50, 383);
+            this.btnAgregar.Location = new System.Drawing.Point(50, 417);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(108, 39);
             this.btnAgregar.TabIndex = 7;
@@ -266,7 +266,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SlateGray;
-            this.ClientSize = new System.Drawing.Size(760, 437);
+            this.ClientSize = new System.Drawing.Size(808, 468);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtBBuscar);
             this.Controls.Add(this.lblBuscar);
@@ -302,7 +302,6 @@
         private System.Windows.Forms.ToolStripMenuItem categoriaToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        //private System.Windows.Forms.ToolStripMenuItem vistaToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgvListadoArticulos;
         private System.Windows.Forms.PictureBox picBox;
         private System.Windows.Forms.Button btnModificar;

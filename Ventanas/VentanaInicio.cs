@@ -45,6 +45,7 @@ namespace Ventanas
                 dgvListadoArticulos.Columns[5].MinimumWidth = 80;
                 dgvListadoArticulos.Columns[6].Visible = false;
                 dgvListadoArticulos.Columns[7].Visible = tsmiPrecio.Checked;
+                dgvListadoArticulos.Columns[7].DefaultCellStyle.Format = "N2";
                 dgvListadoArticulos.Columns[7].MinimumWidth = 70;
                 dgvListadoArticulos.Columns[8].Visible = false;
             }
@@ -224,6 +225,7 @@ namespace Ventanas
                 dgvListadoArticulos.Columns[7].Visible = false;
             }
         }
+
 
         #endregion
 
