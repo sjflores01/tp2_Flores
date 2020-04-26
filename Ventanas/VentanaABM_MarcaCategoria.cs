@@ -60,7 +60,6 @@ namespace Ventanas
                 CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
                 try
                 {
-                    categoria.Eliminado = false;
                     categoria.Descripcion = txtBNombre.Text;
                     if (!categoriaNegocio.BuscarCategoria(categoria.Descripcion.ToLower()))
                     {
@@ -84,7 +83,6 @@ namespace Ventanas
                     MarcaNegocio marcaNegocio = new MarcaNegocio();
                 try
                 {
-                    marca.Eliminado = false;
                     marca.Descripcion = txtBNombre.Text;
                     if (!marcaNegocio.BuscarNombre(marca.Descripcion.ToLower()))
                     {

@@ -120,13 +120,13 @@
             this.txtBCodigo.Location = new System.Drawing.Point(78, 24);
             this.txtBCodigo.MaxLength = 50;
             this.txtBCodigo.Name = "txtBCodigo";
-            this.txtBCodigo.Size = new System.Drawing.Size(253, 20);
+            this.txtBCodigo.Size = new System.Drawing.Size(77, 20);
             this.txtBCodigo.TabIndex = 7;
             this.txtBCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBCodigo_KeyPress);
             // 
             // txtBNombre
             // 
-            this.txtBNombre.Location = new System.Drawing.Point(78, 51);
+            this.txtBNombre.Location = new System.Drawing.Point(79, 51);
             this.txtBNombre.MaxLength = 50;
             this.txtBNombre.Name = "txtBNombre";
             this.txtBNombre.Size = new System.Drawing.Size(253, 20);

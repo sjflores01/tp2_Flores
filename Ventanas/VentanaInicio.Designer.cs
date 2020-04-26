@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaInicio));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,12 +47,18 @@
             this.picBox = new System.Windows.Forms.PictureBox();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.lblBuscar = new System.Windows.Forms.Label();
             this.txtBBuscar = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.txtBBuscarCategoria = new System.Windows.Forms.TextBox();
+            this.txtBBuscarMarca = new System.Windows.Forms.TextBox();
+            this.gbBuscarPor = new System.Windows.Forms.GroupBox();
+            this.lblCategoria = new System.Windows.Forms.Label();
+            this.lblMarca = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
+            this.gbBuscarPor.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -62,7 +69,7 @@
             this.verToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(808, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(917, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -186,6 +193,14 @@
             this.dgvListadoArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListadoArticulos.BackgroundColor = System.Drawing.Color.SlateGray;
             this.dgvListadoArticulos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListadoArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListadoArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListadoArticulos.GridColor = System.Drawing.Color.SlateGray;
             this.dgvListadoArticulos.Location = new System.Drawing.Point(19, 59);
@@ -194,8 +209,9 @@
             this.dgvListadoArticulos.MultiSelect = false;
             this.dgvListadoArticulos.Name = "dgvListadoArticulos";
             this.dgvListadoArticulos.ReadOnly = true;
+            this.dgvListadoArticulos.RowHeadersVisible = false;
             this.dgvListadoArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListadoArticulos.Size = new System.Drawing.Size(448, 346);
+            this.dgvListadoArticulos.Size = new System.Drawing.Size(557, 385);
             this.dgvListadoArticulos.TabIndex = 1;
             this.dgvListadoArticulos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListadoArticulos_CellDoubleClick);
             this.dgvListadoArticulos.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvListadoArticulos_CellMouseClick);
@@ -203,20 +219,20 @@
             // picBox
             // 
             this.picBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picBox.Location = new System.Drawing.Point(496, 59);
+            this.picBox.Location = new System.Drawing.Point(605, 59);
             this.picBox.Name = "picBox";
             this.picBox.Size = new System.Drawing.Size(300, 315);
-            this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBox.TabIndex = 2;
             this.picBox.TabStop = false;
             // 
             // btnModificar
             // 
             this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnModificar.Location = new System.Drawing.Point(178, 417);
+            this.btnModificar.Location = new System.Drawing.Point(178, 456);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(108, 39);
-            this.btnModificar.TabIndex = 3;
+            this.btnModificar.TabIndex = 10;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -224,52 +240,106 @@
             // btnEliminar
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEliminar.Location = new System.Drawing.Point(311, 417);
+            this.btnEliminar.Location = new System.Drawing.Point(311, 456);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(108, 39);
-            this.btnEliminar.TabIndex = 4;
+            this.btnEliminar.TabIndex = 11;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // lblBuscar
-            // 
-            this.lblBuscar.AutoSize = true;
-            this.lblBuscar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblBuscar.Location = new System.Drawing.Point(47, 36);
-            this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(40, 13);
-            this.lblBuscar.TabIndex = 5;
-            this.lblBuscar.Text = "Buscar";
-            // 
             // txtBBuscar
             // 
-            this.txtBBuscar.Location = new System.Drawing.Point(91, 33);
+            this.txtBBuscar.Location = new System.Drawing.Point(105, 22);
+            this.txtBBuscar.MaxLength = 50;
             this.txtBBuscar.Name = "txtBBuscar";
-            this.txtBBuscar.Size = new System.Drawing.Size(328, 20);
+            this.txtBBuscar.Size = new System.Drawing.Size(174, 20);
             this.txtBBuscar.TabIndex = 6;
             this.txtBBuscar.TextChanged += new System.EventHandler(this.txtBBuscar_TextChanged);
             // 
             // btnAgregar
             // 
             this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAgregar.Location = new System.Drawing.Point(50, 417);
+            this.btnAgregar.Location = new System.Drawing.Point(50, 456);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(108, 39);
-            this.btnAgregar.TabIndex = 7;
+            this.btnAgregar.TabIndex = 9;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // txtBBuscarCategoria
+            // 
+            this.txtBBuscarCategoria.Location = new System.Drawing.Point(105, 74);
+            this.txtBBuscarCategoria.MaxLength = 50;
+            this.txtBBuscarCategoria.Name = "txtBBuscarCategoria";
+            this.txtBBuscarCategoria.Size = new System.Drawing.Size(174, 20);
+            this.txtBBuscarCategoria.TabIndex = 9;
+            this.txtBBuscarCategoria.TextChanged += new System.EventHandler(this.txtBBuscarCategoria_TextChanged);
+            // 
+            // txtBBuscarMarca
+            // 
+            this.txtBBuscarMarca.Location = new System.Drawing.Point(105, 48);
+            this.txtBBuscarMarca.MaxLength = 50;
+            this.txtBBuscarMarca.Name = "txtBBuscarMarca";
+            this.txtBBuscarMarca.Size = new System.Drawing.Size(174, 20);
+            this.txtBBuscarMarca.TabIndex = 8;
+            this.txtBBuscarMarca.TextChanged += new System.EventHandler(this.txtBBuscarMarca_TextChanged);
+            // 
+            // gbBuscarPor
+            // 
+            this.gbBuscarPor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbBuscarPor.Controls.Add(this.lblCategoria);
+            this.gbBuscarPor.Controls.Add(this.lblMarca);
+            this.gbBuscarPor.Controls.Add(this.lblNombre);
+            this.gbBuscarPor.Controls.Add(this.txtBBuscarMarca);
+            this.gbBuscarPor.Controls.Add(this.txtBBuscarCategoria);
+            this.gbBuscarPor.Controls.Add(this.txtBBuscar);
+            this.gbBuscarPor.Location = new System.Drawing.Point(605, 388);
+            this.gbBuscarPor.Name = "gbBuscarPor";
+            this.gbBuscarPor.Size = new System.Drawing.Size(299, 106);
+            this.gbBuscarPor.TabIndex = 10;
+            this.gbBuscarPor.TabStop = false;
+            this.gbBuscarPor.Text = "Buscar Por: ";
+            // 
+            // lblCategoria
+            // 
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Location = new System.Drawing.Point(49, 77);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(55, 13);
+            this.lblCategoria.TabIndex = 12;
+            this.lblCategoria.Text = "Categoria:";
+            this.lblCategoria.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // lblMarca
+            // 
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.Location = new System.Drawing.Point(64, 51);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(40, 13);
+            this.lblMarca.TabIndex = 11;
+            this.lblMarca.Text = "Marca:";
+            this.lblMarca.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(57, 25);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(47, 13);
+            this.lblNombre.TabIndex = 10;
+            this.lblNombre.Text = "Nombre:";
+            this.lblNombre.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // VentanaInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SlateGray;
-            this.ClientSize = new System.Drawing.Size(808, 468);
+            this.ClientSize = new System.Drawing.Size(917, 507);
+            this.Controls.Add(this.gbBuscarPor);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.txtBBuscar);
-            this.Controls.Add(this.lblBuscar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.picBox);
@@ -287,6 +357,8 @@
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
+            this.gbBuscarPor.ResumeLayout(false);
+            this.gbBuscarPor.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,7 +378,6 @@
         private System.Windows.Forms.PictureBox picBox;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Label lblBuscar;
         private System.Windows.Forms.TextBox txtBBuscar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem;
@@ -314,6 +385,12 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiCategoria;
         private System.Windows.Forms.ToolStripMenuItem tsmiDescripcion;
         private System.Windows.Forms.ToolStripMenuItem tsmiPrecio;
+        private System.Windows.Forms.TextBox txtBBuscarCategoria;
+        private System.Windows.Forms.TextBox txtBBuscarMarca;
+        private System.Windows.Forms.GroupBox gbBuscarPor;
+        private System.Windows.Forms.Label lblCategoria;
+        private System.Windows.Forms.Label lblMarca;
+        private System.Windows.Forms.Label lblNombre;
     }
 }
 

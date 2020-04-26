@@ -132,10 +132,11 @@ namespace Ventanas
                 pictureBox1.Load(txtBImagen.Text);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                MessageBox.Show(ex.Message + "El URL es invalido!");
+                MessageBox.Show("El URL es invalido!");
+                txtBImagen.Text = "";
             }
         }
 

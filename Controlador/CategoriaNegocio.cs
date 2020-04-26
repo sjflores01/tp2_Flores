@@ -20,19 +20,15 @@ namespace Negocio
 
             try
             {
-                datos.SetearQuery("SELECT Eliminado, Id, Descripcion from Categorias");
+                datos.SetearQuery("SELECT Id, Descripcion from Categorias");
                 datos.EjecutarLector();
 
                 while (datos.lector.Read())
                 {
                     categoria = new Categoria();
-                    categoria.Eliminado = datos.lector.GetBoolean(0);
-                    if (!categoria.Eliminado)
-                    {
-                        categoria.Id = datos.lector.GetInt32(1);
-                        categoria.Descripcion = datos.lector["Descripcion"].ToString();
-                        lista.Add(categoria);
-                    }
+                    categoria.Id = datos.lector.GetInt32(0);
+                    categoria.Descripcion = datos.lector["Descripcion"].ToString();
+                    lista.Add(categoria);
                 }
 
                 return lista;
@@ -54,9 +50,8 @@ namespace Negocio
 
             try
             {
-                datos.SetearQuery("INSERT INTO CATEGORIAS VALUES(@Descripcion, @Eliminado)");
+                datos.SetearQuery("INSERT INTO CATEGORIAS VALUES(@Descripcion)");
                 datos.agregarParametros("@Descripcion", categoria.Descripcion);
-                datos.agregarParametros("@Eliminado", categoria.Eliminado);
                 datos.EjecutarAccion();
             }
             catch (Exception ex)

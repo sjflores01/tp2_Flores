@@ -226,8 +226,57 @@ namespace Ventanas
             }
         }
 
+        private void txtBBuscarCategoria_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                List<Articulo> listaFiltrada;
+
+                if(txtBBuscarCategoria.Text == "")
+                {
+                    listaFiltrada = lista;
+                }
+                else
+                {
+                    listaFiltrada = lista.FindAll(l => l.Categoria.Descripcion.ToLower().Contains(txtBBuscarCategoria.Text.ToLower()));
+                }
+
+                dgvListadoArticulos.DataSource = listaFiltrada;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void txtBBuscarMarca_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                List<Articulo> listaFiltrada;
+
+                if(txtBBuscarMarca.Text == "")
+                {
+                    listaFiltrada = lista;
+                }
+                else
+                {
+                    listaFiltrada = lista.FindAll(l => l.Marca.Descripcion.ToLower().Contains(txtBBuscarMarca.Text.ToLower()));
+                }
+
+                dgvListadoArticulos.DataSource = listaFiltrada;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         #endregion
+
 
     }
 }

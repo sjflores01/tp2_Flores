@@ -19,18 +19,14 @@ namespace Negocio
 			Marca marca;
 			try
 			{
-				datos.SetearQuery("SELECT Eliminado, Id, Descripcion FROM Marcas");
+				datos.SetearQuery("SELECT Id, Descripcion FROM Marcas");
 				datos.EjecutarLector();
 
 				while (datos.lector.Read())
 				{
 					marca = new Marca();
-					marca.Eliminado = datos.lector.GetBoolean(0);
-					if (!marca.Eliminado)
-					{
-						marca.Id = datos.lector.GetInt32(1);
-						marca.Descripcion = datos.lector["Descripcion"].ToString();
-					}
+					marca.Id = datos.lector.GetInt32(0);
+					marca.Descripcion = datos.lector["Descripcion"].ToString();
 					lista.Add(marca);
 				}
 
@@ -53,9 +49,8 @@ namespace Negocio
 
 			try
 			{
-				datos.SetearQuery("INSERT INTO Marcas VALUES (@Descripcion, @Eliminado)");
+				datos.SetearQuery("INSERT INTO Marcas VALUES (@Descripcion)");
 				datos.agregarParametros("@Descripcion", marca.Descripcion);
-				datos.agregarParametros("@Eliminado", marca.Eliminado);
 				datos.EjecutarAccion();
 			}
 			catch (Exception ex)
