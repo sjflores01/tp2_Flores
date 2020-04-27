@@ -274,7 +274,7 @@
             this.txtBBuscarCategoria.MaxLength = 50;
             this.txtBBuscarCategoria.Name = "txtBBuscarCategoria";
             this.txtBBuscarCategoria.Size = new System.Drawing.Size(174, 20);
-            this.txtBBuscarCategoria.TabIndex = 9;
+            this.txtBBuscarCategoria.TabIndex = 8;
             this.txtBBuscarCategoria.TextChanged += new System.EventHandler(this.txtBBuscarCategoria_TextChanged);
             // 
             // txtBBuscarMarca
@@ -283,7 +283,7 @@
             this.txtBBuscarMarca.MaxLength = 50;
             this.txtBBuscarMarca.Name = "txtBBuscarMarca";
             this.txtBBuscarMarca.Size = new System.Drawing.Size(174, 20);
-            this.txtBBuscarMarca.TabIndex = 8;
+            this.txtBBuscarMarca.TabIndex = 7;
             this.txtBBuscarMarca.TextChanged += new System.EventHandler(this.txtBBuscarMarca_TextChanged);
             // 
             // gbBuscarPor

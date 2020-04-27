@@ -75,15 +75,7 @@ namespace Ventanas
 
             try
             {
-                if (txtBCodigo.Text == "" ||
-                    txtBNombre.Text == "" ||
-                    txtBDescripcion.Text == "" ||
-                    txtBImagen.Text == "" ||
-                    txtBPrecio.Text == "")
-                {
-                    MessageBox.Show("Por favor complete todos los campos para continuar!");
-                }
-                else if(articulo == null)
+                if(articulo == null)
                 {
                     articulo = new Articulo();
                 }
@@ -95,7 +87,14 @@ namespace Ventanas
                     articulo.Imagen = txtBImagen.Text;
                     articulo.Precio = Convert.ToDecimal(txtBPrecio.Text);
                     articulo.Eliminado = false;
-                if(articulo.Id != 0)
+                if (txtBCodigo.Text == "" ||
+                    txtBNombre.Text == "" ||
+                    txtBDescripcion.Text == "" ||
+                    txtBImagen.Text == "" ||
+                    txtBPrecio.Text == "")
+                {
+                    MessageBox.Show("Por favor complete todos los campos para continuar!");
+                }else if (articulo.Id != 0)
                 {
                     articuloNegocio.Modificar(articulo);
                     MessageBox.Show("Modificacion realizada con exito");
